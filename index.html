@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather app</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+      <div class="container1">
+        <div class="header" style="color: rgb(255, 236, 66);"><h1>Weather app</h1></div>
+        <div class="subheader" style="color: rgb(255, 133, 51);"><h3>Wondering how the weather is, in any city? Find out below ! </h3></div>
+      </div>
+      <div class="container2">
+          <div class="icon">
+              <div class="icon-container">
+                  <img class="weatherIcon" src="http://openweathermap.org/img/wn/01d@2x.png" width="150" height="150" alt="weatherIcon">
+              </div>
+          </div>
+          <div class="content">
+              <div class="info">
+                  <div class="place" style="font-weight: bold;"></div>
+                  <div class="date"></div>
+                  <div class="status"></div>
+                  <div class="temperature" style="font-weight: bold; color: rgb(252, 47, 47);"></div>
+              </div>
+              <div class="searchCity">
+                    <input type="text" class="inputCity" placeholder="Search for location 🔍" required></input>
+                    <button type="button" id="submit">Submit here</button>
+              </div>
+          </div>
+      </div>
+      <div class="container3">
+            <div class="day2">
+                <h3 class="date2"></h3>
+                <img class="weatherIcon2">
+                <h5 class="status2"></h5>
+                <h4 class="temperature2" style="font-weight: bold; color: rgb(252, 47, 47);"></h4>
+            </div>
+            <div class="day3">
+                <h3 class="date3"></h3>
+                <img class="weatherIcon3">
+                <h5 class="status3"></h5>
+                <h4 class="temperature3" style="font-weight: bold; color: rgb(252, 47, 47);"></h4>
+            </div>
+            <div class="day4">
+                <h3 class="date4"></h3>
+                <img class="weatherIcon4">
+                <h5 class="status4"></h5>
+                <h4 class="temperature4" style="font-weight: bold; color: rgb(252, 47, 47);"></h4>
+            </div>
+            <div class="day5">
+                <h3 class="date5"></h3>
+                <img class="weatherIcon5">
+                <h5 class="status5"></h5>
+                <h4 class="temperature5" style="font-weight: bold; color: rgb(252, 47, 47);"></h4>
+        </div>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skycons/1396634940/skycons.min.js"></script>
+      <script src="skycons.js"></script>
+    <script src="script.js"></script>
+  </body>
+  
+  </html>
+
