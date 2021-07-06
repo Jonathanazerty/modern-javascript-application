@@ -80,11 +80,14 @@ document.getElementById("submit").addEventListener("click", function(){
 
             newdate = days[day] + ", " + datee+ " " + months[month] + " " + year;
 
-            status.innerHTML = statusValue;
-            place.innerHTML = cityValue + " 📍";
-            date.innerHTML = newdate;
-            temperature.innerHTML = degrees + "°C 🌡️";
-            console.log(today);
+            function showHTMLDay1(){
+                status.innerHTML = statusValue;
+                place.innerHTML = cityValue + " 📍";
+                date.innerHTML = newdate;
+                temperature.innerHTML = degrees + "°C 🌡️";
+                console.log(today);
+                }
+                showHTMLDay1();
             
 
             // TOMORROW
@@ -108,10 +111,13 @@ document.getElementById("submit").addEventListener("click", function(){
 
             degrees2 = Math.round(tempValue2-273);
 
-            status2.innerHTML = statusValue2;
-            date2.innerHTML = newdate2;
-            temperature2.innerHTML = degrees2 + "°C 🌡️";
-            console.log(tomorrow);
+            function showHTMLDay2(){
+                status2.innerHTML = statusValue2;
+                date2.innerHTML = newdate2;
+                temperature2.innerHTML = degrees2 + "°C 🌡️";
+                console.log(tomorrow);
+                }
+                showHTMLDay2();
 
 
 
@@ -136,10 +142,13 @@ document.getElementById("submit").addEventListener("click", function(){
 
             degrees3 = Math.round(tempValue3-273);
 
-            status3.innerHTML = statusValue3;
-            date3.innerHTML = newdate3;
-            temperature3.innerHTML = degrees3 + "°C 🌡️";
-            console.log(day3);
+            function showHTMLDay3() {
+                status3.innerHTML = statusValue3;
+                date3.innerHTML = newdate3;
+                temperature3.innerHTML = degrees3 + "°C 🌡️";
+                console.log(day3);
+                }
+                showHTMLDay3();
 
 
 
@@ -164,10 +173,13 @@ document.getElementById("submit").addEventListener("click", function(){
 
             degrees4 = Math.round(tempValue4-273);
 
-            status4.innerHTML = statusValue4;
-            date4.innerHTML = newdate3;
-            temperature4.innerHTML = degrees4 + "°C 🌡️";
-            console.log(day4);
+            function showHTMLDay4() {
+                status4.innerHTML = statusValue4;
+                date4.innerHTML = newdate3;
+                temperature4.innerHTML = degrees4 + "°C 🌡️";
+                console.log(day4);
+                }
+                showHTMLDay4();
 
 
 
@@ -192,10 +204,13 @@ document.getElementById("submit").addEventListener("click", function(){
 
             degrees5 = Math.round(tempValue5-273);
 
-            status5.innerHTML = statusValue5;
-            date5.innerHTML = newdate3;
-            temperature5.innerHTML = degrees5 + "°C 🌡️";
-            console.log(day5);
+            function showHTMLDay5(){
+                status5.innerHTML = statusValue5;
+                date5.innerHTML = newdate3;
+                temperature5.innerHTML = degrees5 + "°C 🌡️";
+                console.log(day5);
+                }
+                showHTMLDay5();
 
                 }   
             }
