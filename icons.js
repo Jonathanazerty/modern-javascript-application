@@ -1,4 +1,4 @@
-export function iconImages() {
+export function iconImages(weatherData) {
     let icon = weatherData["list"][0]["weather"][0]["icon"];
     let img = document.querySelector(".weatherIcon");
     img.setAttribute('src', `http://openweathermap.org/img/wn/${icon}@2x.png`);

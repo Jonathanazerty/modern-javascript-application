@@ -71,5 +71,4 @@
 
                 let date5 = document.querySelector(".date5");
                 date5.innerHTML = newdate5;
-            }
-            datesDays();
+            };

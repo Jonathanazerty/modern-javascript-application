@@ -2,7 +2,6 @@ import {iconImages} from './icons.js';
 import {datesDays} from './dates.js';
 
 let inputCity = document.querySelector(".inputCity");
-let button = document.querySelector(".button");
 
 // TODAY
 let status = document.querySelector(".status");
@@ -37,12 +36,10 @@ document.getElementById("submit").addEventListener("click", () => {
             let data = await fetch("https://api.openweathermap.org/data/2.5/forecast?q="+ inputCity.value +"&appid=68d5f1c6c15d8ca90e89bd90e1f55dc6");
             let weatherData = await data.json();
             console.log(weatherData);
-                {
                 
             // loop over data
             let average = 0;
         for ( let i = 0; i < weatherData["list"].length; i++) {
-            let obj = weatherData["list"][i];
             average += weatherData["list"][i]["main"]["temp"];
             
             }
@@ -53,7 +50,6 @@ document.getElementById("submit").addEventListener("click", () => {
 
             // TODAY
             let cityValue = weatherData["city"]["name"];
-            let tempValue = weatherData["list"][0]["main"]["temp"];
             let statusValue = weatherData["list"][0]["weather"][0]["description"];
 
 
@@ -117,15 +113,16 @@ document.getElementById("submit").addEventListener("click", () => {
             status5.innerHTML = statusValue5;
             temperature5.innerHTML = degrees5 + "°C 🌡️";
 
-                }   
-            }
-
+            iconImages(weatherData); 
+            datesDays();
+        }
+            
 
         
         catch(error){
             alert("Wrong name... please write the correct city name");
             console.log(error);
-            }
+            }     
 
     }
 
