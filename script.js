@@ -1,38 +1,29 @@
+import {iconImages} from './icons.js';
+import {datesDays} from './dates.js';
 
 let inputCity = document.querySelector(".inputCity");
 let button = document.querySelector(".button");
 
- // TODAY
+// TODAY
 let status = document.querySelector(".status");
 let place = document.querySelector(".place");
-let date = document.querySelector(".date");
 let temperature = document.querySelector(".temperature");
 
- // TOMORROW
+// TOMORROW
 let status2 = document.querySelector(".status2");
-let date2 = document.querySelector(".date2");
-let place2 = document.querySelector(".place2");
 let temperature2 = document.querySelector(".temperature2");
 
- // DAY 3
+// DAY 3
 let status3 = document.querySelector(".status3");
-let date3 = document.querySelector(".date3");
-let place3 = document.querySelector(".place3");
 let temperature3 = document.querySelector(".temperature3");
 
- // DAY 4
+// DAY 4
 let status4 = document.querySelector(".status4");
-let date4 = document.querySelector(".date4");
-let place4 = document.querySelector(".place4");
 let temperature4 = document.querySelector(".temperature4");
 
- // DAY 5
+// DAY 5
 let status5 = document.querySelector(".status5");
-let date5 = document.querySelector(".date5");
-let place5 = document.querySelector(".place5");
 let temperature5 = document.querySelector(".temperature5");
-
-
 
 
 document.getElementById("submit").addEventListener("click", () => {
@@ -58,170 +49,73 @@ document.getElementById("submit").addEventListener("click", () => {
             
             // average temperature to degrees celcius
             average = average / weatherData["list"].length;
-            degrees = Math.round(average-273);
+            let degrees = Math.round(average-273);
 
             // TODAY
             let cityValue = weatherData["city"]["name"];
             let tempValue = weatherData["list"][0]["main"]["temp"];
             let statusValue = weatherData["list"][0]["weather"][0]["description"];
 
-            //ICON - today
-            let icon = weatherData["list"][0]["weather"][0]["icon"];
-            let img = document.querySelector(".weatherIcon");
-            img.setAttribute('src', `http://openweathermap.org/img/wn/${icon}@2x.png`);
 
-                let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-                let months = ["Jan", "Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-                let today = new Date();
-                let month = today.getMonth();
-                let datee = today.getDate();
-                let day = today.getDay();
-                let year = today.getFullYear();
+            status.innerHTML = statusValue;
+            place.innerHTML = cityValue + " 📍";
+            temperature.innerHTML = degrees + "°C 🌡️";
 
-                newdate = days[day] + ", " + datee+ " " + months[month] + " " + year;
-
-            function showHTMLDay1(){
-                status.innerHTML = statusValue;
-                place.innerHTML = cityValue + " 📍";
-                date.innerHTML = newdate;
-                temperature.innerHTML = degrees + "°C 🌡️";
-                };
-                showHTMLDay1();
             
 
             // TOMORROW
-            const datesDay2 = () => {
-                let tomorrow = new Date();
-                tomorrow.setDate(today.getDate() + 1);
 
-                let month2 = tomorrow.getMonth();
-                let datee2 = tomorrow.getDate();
-                let day2 = tomorrow.getDay();
-                let year2 = tomorrow.getFullYear();
-
-                newdate2 = days[day2] + ", " + datee2+ " " + months[month2] + " " + year2;
-            }
-            datesDay2();
-            console.log(newdate2);
-
-            //ICON - day 2
-            let icon2 = weatherData["list"][5]["weather"][0]["icon"];
-            let img2 = document.querySelector(".weatherIcon2");
-            img2.setAttribute('src', `http://openweathermap.org/img/wn/${icon2}@2x.png`);
-            
+            //ICON - day 2            
             let statusValue2 = weatherData["list"][5]["weather"][0]["description"];
             let tempValue2 = weatherData["list"][5]["main"]["temp"];
 
-            degrees2 = Math.round(tempValue2-273);
+            let degrees2 = Math.round(tempValue2-273);
 
-            function showHTMLDay2(){
-                status2.innerHTML = statusValue2;
-                date2.innerHTML = newdate2;
-                temperature2.innerHTML = degrees2 + "°C 🌡️";
-                }
-                showHTMLDay2();
+            status2.innerHTML = statusValue2;
+            temperature2.innerHTML = degrees2 + "°C 🌡️";
+
 
 
 
             // DAY 3
-            const datesDay3 = () => {
-                let day3 = new Date();
-                day3.setDate(today.getDate() + 2);
-
-                let month3 = day3.getMonth();
-                let datee3 = day3.getDate();
-                let daythree = day3.getDay();
-                let year3 = day3.getFullYear();
-
-                newdate3 = days[daythree] + ", " + datee3+ " " + months[month3] + " " + year3;
-            }
-            datesDay3();
-            console.log(newdate3);
                             
             //ICON - day 3
-            let icon3 = weatherData["list"][13]["weather"][0]["icon"];
-            let img3 = document.querySelector(".weatherIcon3");
-            img3.setAttribute('src', `http://openweathermap.org/img/wn/${icon3}@2x.png`);
-
             let statusValue3 = weatherData["list"][13]["weather"][0]["description"];
             let tempValue3 = weatherData["list"][13]["main"]["temp"];
 
-            degrees3 = Math.round(tempValue3-273);
+            let degrees3 = Math.round(tempValue3-273);
 
-            function showHTMLDay3() {
-                status3.innerHTML = statusValue3;
-                date3.innerHTML = newdate3;
-                temperature3.innerHTML = degrees3 + "°C 🌡️";
-                }
-                showHTMLDay3();
+            status3.innerHTML = statusValue3;
+            temperature3.innerHTML = degrees3 + "°C 🌡️";
+
 
 
 
             // DAY 4
-            const datesDay4 = () => {
-                let day4 = new Date();
-                day4.setDate(today.getDate() + 3);
-
-                let month4 = day4.getMonth();
-                let datee4 = day4.getDate();
-                let dayfour = day4.getDay();
-                let year4 = day4.getFullYear();
-
-                newdate3 = days[dayfour] + ", " + datee4+ " " + months[month4] + " " + year4;
-            }
-            datesDay4();
-            console.log(newdate3);
             
             //ICON - day 4
-            let icon4 = weatherData["list"][21]["weather"][0]["icon"];
-            let img4 = document.querySelector(".weatherIcon4");
-            img4.setAttribute('src', `http://openweathermap.org/img/wn/${icon4}@2x.png`);
-
             let statusValue4 = weatherData["list"][21]["weather"][0]["description"];
             let tempValue4 = weatherData["list"][21]["main"]["temp"];
 
-            degrees4 = Math.round(tempValue4-273);
+            let degrees4 = Math.round(tempValue4-273);
 
-            function showHTMLDay4() {
-                status4.innerHTML = statusValue4;
-                date4.innerHTML = newdate3;
-                temperature4.innerHTML = degrees4 + "°C 🌡️";
-                }
-                showHTMLDay4();
+
+            status4.innerHTML = statusValue4;
+            temperature4.innerHTML = degrees4 + "°C 🌡️";
+
 
 
 
             // DAY 5
-            const datesDay5 = () => {
-                let day5 = new Date();
-                day5.setDate(today.getDate() + 4);
-
-                let month5 = day5.getMonth();
-                let datee5 = day5.getDate();
-                let dayfive = day5.getDay();
-                let year5 = day5.getFullYear();
-
-                newdate3 = days[dayfive] + ", " + datee5+ " " + months[month5] + " " + year5;
-            }
-            datesDay5();
-            console.log(newdate3);
 
             //ICON - day 5
-            let icon5 = weatherData["list"][29]["weather"][0]["icon"];
-            let img5 = document.querySelector(".weatherIcon5");
-            img5.setAttribute('src', `http://openweathermap.org/img/wn/${icon5}@2x.png`);
-
             let statusValue5 = weatherData["list"][29]["weather"][0]["description"];
             let tempValue5 = weatherData["list"][29]["main"]["temp"];
 
-            degrees5 = Math.round(tempValue5-273);
+            let degrees5 = Math.round(tempValue5-273);
 
-            function showHTMLDay5(){
-                status5.innerHTML = statusValue5;
-                date5.innerHTML = newdate3;
-                temperature5.innerHTML = degrees5 + "°C 🌡️";
-                }
-                showHTMLDay5();
+            status5.innerHTML = statusValue5;
+            temperature5.innerHTML = degrees5 + "°C 🌡️";
 
                 }   
             }
