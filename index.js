@@ -4,9 +4,9 @@ import {datesDays} from './dates.js';
 let inputCity = document.querySelector(".inputCity");
 
 // TODAY
-let status = document.querySelector(".status");
-let place = document.querySelector(".place");
-let temperature = document.querySelector(".temperature");
+let status1 = document.querySelector(".status1");
+let place1 = document.querySelector(".place1");
+let temperature1 = document.querySelector(".temperature1");
 
 // TOMORROW
 let status2 = document.querySelector(".status2");
@@ -46,16 +46,16 @@ document.getElementById("submit").addEventListener("click", () => {
             
             // average temperature to degrees celcius
             average = average / weatherData["list"].length;
-            let degrees = Math.round(average-273);
+            let degrees1 = Math.round(average-273);
 
             // TODAY
-            let cityValue = weatherData["city"]["name"];
-            let statusValue = weatherData["list"][0]["weather"][0]["description"];
+            let cityValue1 = weatherData["city"]["name"];
+            let statusValue1 = weatherData["list"][0]["weather"][0]["description"];
 
 
-            status.innerHTML = statusValue;
-            place.innerHTML = cityValue + " 📍";
-            temperature.innerHTML = degrees + "°C 🌡️";
+            status1.innerHTML = statusValue1;
+            place1.innerHTML = cityValue1 + " 📍";
+            temperature1.innerHTML = degrees1 + "°C 🌡️";
 
             
 

@@ -12,8 +12,8 @@
 
                 let newdate = days[day] + ", " + datee+ " " + months[month] + " " + year;
 
-                let date = document.querySelector(".date");
-                date.innerHTML = newdate;
+                let date1 = document.querySelector(".date1");
+                date1.innerHTML = newdate;
                 
                 // TOMORROW
                 let tomorrow = new Date();
